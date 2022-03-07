@@ -1,57 +1,59 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import {Appbar, Card, Title, Paragraph} from 'react-native-paper';
+import moment from 'moment';
 
 const App = () => {
   return (
     <>
-      <Appbar.Header style={{backgroundColor: '#969cba'}}>
-        <Appbar.Content title="Smart Inhaler" titleStyle={{color: '#969CBA'}} />
+      <Appbar.Header style={{backgroundColor: 'green'}}>
+        <Appbar.Content title="Dashboard" />
       </Appbar.Header>
       <Card style={styles.topCard}>
         <Card.Content>
-          <Title>Card title</Title>
-          <Paragraph>Card content</Paragraph>
-          <Paragraph>Card content</Paragraph>
+          <Title style={{fontSize:25}}>Statistics</Title>
+          <Paragraph style={{fontSize: 15, fontWeight: '600'}}>
+            Local Place
+          </Paragraph>
+          <Paragraph>{moment().format('MMMM Do ,YYYY')}</Paragraph>
         </Card.Content>
       </Card>
       <View style={styles.container}>
         <Card style={styles.redbox}>
           <Card.Content>
-            <Title>Health</Title>
-            <Paragraph>Good</Paragraph>
+            <Title style={[styles.title]}>Health</Title>
+            <Paragraph style={styles.subtitle}>Good</Paragraph>
           </Card.Content>
         </Card>
         <Card style={styles.redbox}>
           <Card.Content>
-            <Title>Puff Counter</Title>
-            <Paragraph>5</Paragraph>
+            <Title style={styles.title}>Puff Counter</Title>
+            <Paragraph style={styles.subtitle}>5</Paragraph>
           </Card.Content>
         </Card>
       </View>
       <View style={styles.container}>
         <Card style={styles.bluebox}>
           <Card.Content>
-            <Title>Weather</Title>
-            <Paragraph>Good</Paragraph>
+            <Title style={styles.title}>Weather</Title>
+            <Paragraph style={styles.subtitle}>Good</Paragraph>
           </Card.Content>
         </Card>
         <Card style={styles.bluebox}>
           <Card.Content>
-            <Title>Shaking</Title>
-            <Paragraph>Well</Paragraph>
+            <Title style={styles.title}>Shaking</Title>
+            <Paragraph style={styles.subtitle}>Well</Paragraph>
           </Card.Content>
         </Card>
         <Card style={styles.bluebox}>
           <Card.Content>
-            <Title>Find</Title>
+            <Title style={styles.title}>Find Your Device</Title>
           </Card.Content>
         </Card>
       </View>
       <Card style={styles.blackbox}>
         <Card.Content>
-          <Title>Card title</Title>
-          <Paragraph>Card content</Paragraph>
+          <Title style={styles.title}>Daily Puffs</Title>
         </Card.Content>
       </Card>
     </>
@@ -61,10 +63,10 @@ const App = () => {
 export default App;
 const styles = StyleSheet.create({
   topCard: {
-    
-    height: 200,
-    marginBottom: 10,
-    backgroundColor: '#969CBA',
+    height: 150,
+    margin: 10,
+    borderRadius: 10,
+    elevation: 4,
   },
   container: {
     flexDirection: 'row',
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
   redbox: {
     width: 190,
     height: 120,
-    marginTop: 30,
+    marginTop: 10,
     elevation: 4,
     borderRadius: 10,
   },
@@ -87,9 +89,17 @@ const styles = StyleSheet.create({
   },
   blackbox: {
     height: 500,
-    elevation: 50,
+    elevation: 10,
     marginTop: 30,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+  },
+  title: {
+    fontFamily: 'Montserrat',
+    fontSize: 18,
+  },
+  subtitle: {
+    fontFamily: 'raleway',
+    fontSize: 15,
   },
 });
