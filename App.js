@@ -5,50 +5,46 @@ import {Appbar, Card, Title, Paragraph} from 'react-native-paper';
 const App = () => {
   return (
     <>
-      <Appbar.Header>
-        <Appbar.Content title="Smart Inhaler" />
+      <Appbar.Header style={{backgroundColor: '#969cba'}}>
+        <Appbar.Content title="Smart Inhaler" titleStyle={{color: '#969CBA'}} />
       </Appbar.Header>
-      <Card>
+      <Card style={styles.topCard}>
         <Card.Content>
           <Title>Card title</Title>
           <Paragraph>Card content</Paragraph>
+          <Paragraph>Card content</Paragraph>
         </Card.Content>
       </Card>
-      <View>
-        <Text>Local Place</Text>
-        <Text>Date Here</Text>
-      </View>
       <View style={styles.container}>
         <Card style={styles.redbox}>
           <Card.Content>
-            <Title>Card title</Title>
-            <Paragraph>Card content</Paragraph>
+            <Title>Health</Title>
+            <Paragraph>Good</Paragraph>
           </Card.Content>
         </Card>
         <Card style={styles.redbox}>
           <Card.Content>
-            <Title>Card title</Title>
-            <Paragraph>Card content</Paragraph>
+            <Title>Puff Counter</Title>
+            <Paragraph>5</Paragraph>
           </Card.Content>
         </Card>
       </View>
       <View style={styles.container}>
         <Card style={styles.bluebox}>
           <Card.Content>
-            <Title>Card title</Title>
-            <Paragraph>Card content</Paragraph>
+            <Title>Weather</Title>
+            <Paragraph>Good</Paragraph>
           </Card.Content>
         </Card>
         <Card style={styles.bluebox}>
           <Card.Content>
-            <Title>Card title</Title>
-            <Paragraph>Card content</Paragraph>
+            <Title>Shaking</Title>
+            <Paragraph>Well</Paragraph>
           </Card.Content>
         </Card>
         <Card style={styles.bluebox}>
           <Card.Content>
-            <Title>Card title</Title>
-            <Paragraph>Card content</Paragraph>
+            <Title>Find</Title>
           </Card.Content>
         </Card>
       </View>
@@ -64,6 +60,12 @@ const App = () => {
 
 export default App;
 const styles = StyleSheet.create({
+  topCard: {
+    
+    height: 200,
+    marginBottom: 10,
+    backgroundColor: '#969CBA',
+  },
   container: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
@@ -73,12 +75,15 @@ const styles = StyleSheet.create({
     width: 190,
     height: 120,
     marginTop: 30,
+    elevation: 4,
+    borderRadius: 10,
   },
   bluebox: {
+    borderRadius: 10,
     width: 120,
     height: 120,
-    backgroundColor: 'blue',
     marginTop: 20,
+    elevation: 4,
   },
   blackbox: {
     height: 500,
